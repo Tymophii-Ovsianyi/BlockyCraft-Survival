@@ -32,7 +32,7 @@ body{
   font-weight: 600;
   font-size: 35px;
        
-  margin: 0 auto 60px auto; 
+  margin: 0 auto 20px auto; 
   text-align: center;
 }
 
@@ -42,9 +42,7 @@ body{
   margin: 0 auto 10px auto; 
 }
 
-
 /* ==========================================основні правила=========================== */
-
 .hero, .pricing{
   background: linear-gradient(to top, #725d008f, #d7b00002);
   padding: 30px;
@@ -55,7 +53,7 @@ body{
   margin: 5px;
 }
 
-.characters-list {
+.characters-list, .animals-list {
   display: flex;             /* робимо горизонтальний ряд */
   overflow-x: auto;          /* включаємо горизонтальний скрол */
   gap: 20px;                 /* відступи між картками */
@@ -63,14 +61,13 @@ body{
   padding-bottom: 10px;      /* трохи відступу знизу */
 }
 
-
 .characters-list-item{
   display: flex;    
   gap: 50px;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .characters-list-item {
@@ -78,16 +75,17 @@ body{
   scroll-snap-align: start;  /* для snap ефекту, необов'язково */
 }
 
-.characters-list::-webkit-scrollbar {
+.characters-list::-webkit-scrollbar,
+.animals-list::-webkit-scrollbar {
   height: 8px;
 }
 
-.characters-list::-webkit-scrollbar-thumb {
+.characters-list::-webkit-scrollbar-thumb, .animals-list::-webkit-scrollbar-thumb {
   background-color: rgba(0,0,0,0.3);
   border-radius: 4px;
 }
 
-.characters-list {
+.characters-list, .animals-list {
   display: flex;
   overflow-x: hidden; /* ховаємо смугу прокрутки */
   scroll-snap-type: x mandatory; /* прив’язка до однієї картки */
@@ -127,7 +125,7 @@ body{
   margin: 60px 40px;
 }
 
-.footer-list-item-btn,.header-button{
+.footer-list-item-btn,.header-button, #prevBtn , #nextBtn, #prevBtn1 , #nextBtn1 {
   border: none;
   font: inherit;
   cursor: pointer;
@@ -141,7 +139,7 @@ body{
   transition: background-color 0.8s ease;
 }
 
-.footer-list-item-btn:hover,.header-button:hover {
+.footer-list-item-btn:hover,.header-button:hover, #prevBtn:hover , #nextBtn:hover, #prevBtn1:hover, #nextBtn1:hover {
   background-color: rgb(0, 20, 174);
   box-shadow: 0 4px 12px #ffd000;
   color: #ffd000;
@@ -168,19 +166,17 @@ color: #d8b000;
 }
 
 .x{
-  
   position: absolute; 
   top: 10px;        
   right: 10px;   
   cursor: pointer;
-
 }
 
 .modal {
   position: relative;
   width: 400px;
-  padding: 20px;
-  background: linear-gradient(to top, #725d008f, #d7b00002);
+  padding: 50px;
+  background: linear-gradient(to top, #6c5800, #483b00b2);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
@@ -188,7 +184,8 @@ color: #d8b000;
 .modal-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
+  padding: 50px;
 }
 
 .is-hidden {
@@ -202,7 +199,7 @@ color: #d8b000;
   left: 0;
   width: 100vw;                  /* На всю ширину вікна */
   height: 100vh;                 /* На всю висоту вікна */
-  background-color: rgba(0, 0, 0, 0.6); /* Напівпрозорий чорний фон */
+  background-color: rgba(0, 0, 0, 0.761); /* Напівпрозорий чорний фон */
   display: flex;                 /* Центрування модалки */
   justify-content: center;       /* По горизонталі */
   align-items: center;           /* По вертикалі */
@@ -239,8 +236,12 @@ color: #d8b000;
   opacity: 1;
   transform: translate(-50%, 0);
 }
-
-
+.btn-div {
+  display: flex;               /* робимо флекс-контейнер */
+  justify-content: center;     /* по горизонталі по центру */
+  gap: 20px;                   /* відстань між кнопками */
+  margin: 0;              /* трохи відступу зверху і знизу */
+}
 
 
 

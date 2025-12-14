@@ -71,12 +71,39 @@ form.addEventListener('submit', (event) => {
 
 
 const list = document.querySelector(".characters-list");
-const cardWidth = list.clientWidth; // ширина однієї картки = ширина контейнера
+const listItems = list.querySelectorAll(".characters-list-item");
+const cardWidth = list.clientWidth; // ширина контейнера
 
 document.getElementById("nextBtn").addEventListener("click", () => {
   list.scrollLeft += cardWidth;
+  // Циклічність
+  if (list.scrollLeft + cardWidth >= list.scrollWidth) {
+    list.scrollLeft = 0;
+  }
 });
 
 document.getElementById("prevBtn").addEventListener("click", () => {
   list.scrollLeft -= cardWidth;
+  // Циклічність
+  if (list.scrollLeft < 0) {
+    list.scrollLeft = list.scrollWidth - cardWidth;
+  }
+});
+
+const list1 = document.querySelector(".animals-list");
+const listItems1 = list1.querySelectorAll(".animals-list-item");
+const cardWidth1 = list1.clientWidth;
+
+document.getElementById("nextBtn1").addEventListener("click", () => {
+  list1.scrollLeft += cardWidth1;
+  if (list1.scrollLeft + cardWidth1 >= list1.scrollWidth) {
+    list1.scrollLeft = 0;
+  }
+});
+
+document.getElementById("prevBtn1").addEventListener("click", () => {
+  list1.scrollLeft -= cardWidth1;
+  if (list1.scrollLeft < 0) {
+    list1.scrollLeft = list1.scrollWidth - cardWidth1;
+  }
 });
